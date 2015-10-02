@@ -1,0 +1,107 @@
+#bluemixlogo {
+	width: 75%;
+}
+
+.jumbotron {
+	padding: 0px;
+	margin-bottom: 0px;
+}
+
+.bg {
+  	background: no-repeat center center;
+  	width: 100%;
+  	margin-top: 0px;
+  	top:0;
+  	left:0;
+  	z-index: -1;
+
+}
+
+#counterHeading {
+	font-size: 50px;
+	color: white;
+}
+
+.timer-area {
+	background-color: #000;
+	text-align: center;
+	height: auto;
+  	margin: 0 auto;
+
+}
+
+ul#countdown {
+	margin-right: 30px;
+}
+
+ul#countdown li{
+	display: inline-block;
+	background: transparent url('../img/timer-piece.png') no-repeat left top;
+	width: 104px;
+}
+
+ul#countdown span{
+	font-size: 3em;
+	font-weight: bold;
+	height: 110px;
+	line-height: 110px;
+}
+
+p.timeRefDays, p.timeRefHours, p.timeRefMinutes, p.timeRefSeconds {
+	margin-top: 2em;
+	text-transform: uppercase;
+}
+
+ul#countdown p{
+	color: white;
+	}
+
+.supporters{
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 0px;
+}
+
+.smu{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 0px;
+
+}
+
+.bluemix {
+  width: 100%;
+  padding-top: 0px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.feedNS {
+  width: 90%;
+  height: auto;
+  padding-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-custom {
+    background-color:#FFF;
+    color:#229922;
+    border-radius:0;
+	border-style: solid;
+	border-color: #E6E6E6;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#229922;
+	font-size: 16px;
+}
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #229922;
+    background-color:transparent;
+}
+.navbar-custom .navbar-brand {
+    color:#229922;
+}

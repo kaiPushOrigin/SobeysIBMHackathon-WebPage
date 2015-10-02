@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+	<title>SMU-IBM BlueMix Hackathon</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="bower_components/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Just for debugging purposes. Don't actually copy this line! -->
+	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+      <![endif]-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
+      <script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+      <script src="bower_components/bootstrap/js/bootstrap.js"></script>
+	  <link rel="stylesheet" href="stylesheets/prism.css">
+	  <script src="js/prism.js"></script>
+	  <script src="js/countdown.js"></script>
+	  <script type="text/javascript">
+	      $(document).ready(function() {
+
+	      	$("#countdown").countdown({
+	      		date: "09 october 2015 10:00:00",
+	          format: "on" //two digits instead of one
+	      },
+
+	      function() {
+	          //callback function
+	      });
+	     });
+      </script>
+
+
+      <!-- Custom styles for this template -->
+      <link href="stylesheets/master.css" rel="stylesheet">
+      <link href="stylesheets/signin.css" rel="stylesheet">
+
+  </head>
+<!-- NAVBAR
+	================================================== -->
+
+	<body>
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-custom navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><img src="img/Sobeys-Logo.jpg" height="100%"></a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#hackathon">Hackathon</a></li>
+						<li><a href="#social">Social Media</a></li>
+						<li><a href="#learnBluemix">Learn Bluemix</a></li>
+						<li><a href="#supportedBy">Supporters</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div><!--container-->
+		</nav> <!--navbar inverse-->
+		<div class="jumbotron bg">
+			<h1 class="text-center">
+				<img src="img/data.jpg" id="bluemixlogo" width="50%" />
+			</h1>
+		</div>
+		<div class="timer-area">
+			<br><br>
+			<h1 id="counterHeading">The countdown has begun!</h1>
+			<br><br>
+			<ul id="countdown">
+				<li>
+					<span class="days" id="timer">00</span>
+					<p class="timeRefDays">days</p>
+				</li>
+				<li>
+					<span class="hours" id="timer">00</span>
+					<p class="timeRefHours">hours</p>
+				</li>
+				<li>
+					<span class="minutes" id="timer">00</span>
+					<p class="timeRefMinutes">minutes</p>
+				</li>
+				<li>
+					<span class="seconds" id="timer">00</span>
+					<p class="timeRefSeconds">seconds</p>
+				</li>
+			</ul>
+			<br><br><br>
+		</div><!--timer-area-->
+		<br><br>
+
+		<div class="container">
+
+			<div class="row featurette" id="hackathon">
+				<div class="col-md-7">
+					<h2 class="featurette-heading"><br>Getting Started<span></h2>
+						<p class="lead">
+							Below are the links that will help you get started with using the database, understanding the data and some SQL queries.
+						</p>
+					<p class="lead" style="font-weight: bold">
+							<a href="files/dbSetup.doc">Database Setup Instructions</a><br><br>
+							<a href="files/SobeysHackathon_DataModel.jpg">Sobeys Hakathon Data Model</a><br><br>
+							<a href="files/SobeysHackathonDB.png">Sobeys Hakathon Data Model</a><br><br>
+							<a href="files/DB2_queries.sql">DB2 SQL Queries</a><br>
+					</p>
+					<pre>
+						<code class="language-javascript">
+{
+ "sqldb": [
+   {
+     "name": "SobeysDBFull",
+     "label": "sqldb",
+     "plan": "sqldb_small",
+     "credentials": {
+       "port": 50000,
+       "db": "I6832924",
+       "username": "piqgpyyd",
+       "ssljdbcurl": "jdbc:db2://192.155.240.174:50001/I6832924:sslConnection=true;",
+       "host": "192.155.240.174",
+       "dsn": "DATABASE=I6832924;HOSTNAME=192.155.240.174;PORT=50000;PROTOCOL=TCPIP;UID=piqgpyyd;PWD=zttx5bvvgvfc;",
+       "hostname": "192.155.240.174",
+       "jdbcurl": "jdbc:db2://192.155.240.174:50000/I6832924",
+       "ssldsn": "DATABASE=I6832924;HOSTNAME=192.155.240.174;PORT=50001;PROTOCOL=TCPIP;UID=piqgpyyd;PWD=zttx5bvvgvfc;Security=SSL;",
+       "uri": "db2://piqgpyyd:zttx5bvvgvfc@192.155.240.174:50000/I6832924",
+       "password": "zttx5bvvgvfc"
+     }
+   }
+ ]
+}
+						</code>
+					</pre>
+
+				</div> <!--col-md-7-->
+
+				<div class="col-md-5">
+					<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" src="img/what.jpg"
+				   alt="Generic placeholder image" width="100%">
+					</div>
+
+			</div> <!-- row featurette-->
+
+			<br><br>
+			<hr class="featurette-divider" id="social">
+
+			<div class="row featurette">
+				<div class="col-md-7">
+					<h2 class="featurette-heading"><br>Go Social<span class="text-muted"> or Go Home!</span></h2>
+					<p class="lead"><br>Spread the word. <br><br>Lets go social and get this going viral!<br> <br>
+						Tweet to <b>@bluehalifax</b> and use hashtags
+						<b>#SobeysHack15 #IBM #Bluemix</b></p>
+				</div>
+
+				<div class="col-md-5">
+					<a class="twitter-timeline" height="400" width="100%" href="https://twitter.com/bluehalifax" data-widget-id="576644444902002688">Tweets by @bluehalifax</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					<br><br><br>
+				</div>
+			</div> <!--row featurette-->
+
+			<hr class="featurette-divider" id="learnBluemix">
+			<div class="row featurette">
+				<div class="col-md-7">
+					<h2 class="featurette-heading"><br>Bluemix Tutorial Links</h2>
+						<ul class="lead"><br>
+							<li>
+								<a href="http://www.ibm.com/developerworks/cloud/library/cl-bestoflbluemix2014/" target="_blank">
+									<b>Top 15 Blumix Tutorials</b></a>
+							</li>
+							<li>
+								<a href="http://www.ibm.com/developerworks/cloud/library/cl-watson-films-bluemix-app/" target="_blank"><b>IBM Watson and Bluemix</b></a>
+							</li>
+							<li>
+								<a href="http://www.ibm.com/developerworks/library/mo-ios-mobiledata-app/" target="_blank">
+									<b>iOS App using IBM Mobile Data</b></a>
+							</li>
+							<li>
+								<a href="http://www.ibm.com/developerworks/library/d-bluemix-javadevops/index.html" target="_blank"><b>Java Apps with DevOps Services</b></a>
+							</li>
+						</ul>
+					</p><br><br>
+				</div> <!--col-md-7-->
+
+				<div class="col-md-5"><br><br>
+					<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto"
+					src="img/bluemix_kickstart.png" alt="Generic placeholder image" width="80%">
+				</div>
+			</div> <!-- row featurette -->
+
+			<hr class="featurette-divider">
+			<div class="row">
+				<div class="col-md-12" id="supportedBy">
+					<h2 class="featurette-heading">Supported By: </h2><br><br>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-md-4">
+					<a href="http://www-01.ibm.com/software/bluemix/" target="_blank"><img
+						src="img/sobeys.png" alt="Bluemix" width= "100%"/></a>
+				</div>
+
+				<div class="col-md-3">
+					<a href="http://www-935.ibm.com/services/us/gbs/consulting/" target="_blank"><img class="supporters"
+						src="img/IBM_supporter.svg"  alt="IBM GBS" width="50%"/></a><br><br><br>
+				</div>
+
+				<div class="col-md-5">
+					<a href="http://www.smu.ca/" target="_blank">
+					<img class="smu" src="img/smu.png" alt="SMU" /></a><br><br><br><br>
+				</div>
+			</div> <!--row-->
+
+
+		</div> <!-- container-->
+			<div id="footer">
+				<div class="container" style="text-align: center">
+					<p>Website design by Kashif<br>&copy; Saint Mary's University, IBM, Sobeys Inc. 2015
+				</div>
+			</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+  </body>
+</html>
