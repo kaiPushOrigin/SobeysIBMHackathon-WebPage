@@ -1,0 +1,102 @@
+Some useful hints. If you imported date and time as strings, add date and time
+fields of date and time type.
+
+UPDATE basket SET date = STR_TO_DATE(  `CALENDAR_DT` ,  '%d%M%Y' ) ;
+
+UPDATE basket SET time = STR_TO_DATE( `TRANSACTION_TM`, '%H:%i:%s' ) ;
+
+Some useful queries.
+
+Total number of records in the table basket.
+
+SELECT COUNT( * ) 
+FROM `basket`
+
+Total revenues in the table basket.
+
+SELECT SUM( `SELLING_RETAIL_AMT` ) 
+FROM `basket`
+
+Total number of customers in the table basket.
+
+SELECT COUNT( DISTINCT `CUSTOMER_SK` ) 
+FROM `basket`
+
+Revenues for each date.
+
+SELECT DATE, ROUND( SUM( `SELLING_RETAIL_AMT` ) ) AS revenue
+FROM `basket` 
+GROUP BY DATE
+
+Revenues for each day of the week.
+
+SELECT DAYOFWEEK( DATE ) 
+DAY , ROUND( SUM( `SELLING_RETAIL_AMT` ) ) AS revenue
+FROM `basket` 
+GROUP BY DAY 
+
+Revenues for each hour of the day.
+
+SELECT HOUR( TIME ) AS HOUR , ROUND( SUM( `SELLING_RETAIL_AMT` ) ) AS revenue
+FROM `basket` 
+GROUP BY HOUR 
+
+Revenues for each city.
+
+SELECT `CITY_NM` , ROUND( SUM( `SELLING_RETAIL_AMT` ) ) AS revenue
+FROM `member` AS m, basket AS b
+WHERE m.`CUSTOMER_SK` = b.`CUSTOMER_SK` 
+GROUP BY `CITY_NM` 
+ORDER BY revenue DESC 
+
+Revenues for products.
+
+SELECT `ITEM_SK` , ROUND( SUM( `SELLING_RETAIL_AMT` ) ) AS revenue
+FROM `sales` 
+GROUP BY `ITEM_SK` 
+ORDER BY revenue DESC 
+
+Popularity: Number of customers who bought a product (using product sku).
+
+SELECT `ITEM_SK` , COUNT( DISTINCT `CUSTOMER_SK` ) AS customers
+FROM `sales` 
+GROUP BY `ITEM_SK` 
+ORDER BY customers DESC
+
+Popularity: Number of customers who bought a product (using product name).
+
+SELECT s.`ITEM_SK` , `ITEM_ENG_DESC` , COUNT( DISTINCT `CUSTOMER_SK` ) AS customers
+FROM `sales` AS s, items AS i
+WHERE s.`ITEM_SK` = i.`ITEM_SK` 
+GROUP BY `ITEM_SK` 
+ORDER BY customers DESC 
+
+Popularity: Number of baskets containing a product (using product sku).
+
+SELECT `ITEM_SK` , COUNT( DISTINCT `TRANSACTION_RK` ) AS visits
+FROM `sales` 
+GROUP BY `ITEM_SK` 
+ORDER BY visits DESC
+
+Popularity: Number of baskets containing bought a product (using product name).
+
+SELECT s.`ITEM_SK` , `ITEM_ENG_DESC` , COUNT( DISTINCT `TRANSACTION_RK` ) AS visits
+FROM `sales` AS s, items AS i
+WHERE s.`ITEM_SK` = i.`ITEM_SK` 
+GROUP BY `ITEM_SK` 
+ORDER BY visits DESC
+
+
+Revenues per customer.
+
+SELECT `CUSTOMER_SK` , ROUND( SUM( `SELLING_RETAIL_AMT` ) ) AS revenue
+FROM `basket` 
+GROUP BY `CUSTOMER_SK` 
+ORDER BY revenue DESC 
+
+Loyalty: number of visits per customer.
+
+SELECT `CUSTOMER_SK` , ROUND( COUNT( DISTINCT `TRANSACTION_RK` ) ) AS visits
+FROM `basket` 
+GROUP BY `CUSTOMER_SK` 
+ORDER BY visits DESC
